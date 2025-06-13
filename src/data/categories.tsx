@@ -22,7 +22,7 @@ export const categories: ICategory[] = [
         icon: <FiMapPin size={26} style={{ color: "#ff0000" }} />,
       },
     ],
-    imageSrc: "/images/DL2.0.png",
+    imageSrc: "/images/motor.png",
   },
   {
     title: "Fuel Collection",
@@ -44,7 +44,7 @@ export const categories: ICategory[] = [
         icon: <FiWind size={26} style={{ color: "#ff0000" }} />,
       },
     ],
-    imageSrc: "/images/motor.png",
+    imageSrc: "/images/DL2.0.png",
   },
   {
     title: "Fuel Nation",

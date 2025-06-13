@@ -1,9 +1,45 @@
-export default function Hero() {
+"use client";
+import { motion } from "framer-motion";
+import Image from "next/image"; // Importando o componente Image
+
+const Hero: React.FC = () => {
   return (
-    <section className="bg-gray-100 py-20 text-center">
-      <h2 className="text-4xl font-bold mb-4">Fuel Head - Powered by Passion</h2>
-      <p className="text-lg mb-6">Mais do que uma marca, um movimento. Vestuário exclusivo para quem vive com gasolina no sangue.</p>
-      <a href="#categorias" className="bg-red-600 text-white px-6 py-3 rounded-full hover:bg-red-700">Explorar Coleções</a>
+    <section className="relative w-full h-screen overflow-hidden">
+      {/* Imagem como fundo usando <Image> */}
+      <Image
+        src="/images/fundo.png" // Caminho corrigido (sem /public/)
+        alt="Fuel Head - Carro e Moto"
+        fill // Ocupa o contêiner pai
+        className="object-cover"
+        quality={100}
+        priority // Carrega imediatamente para melhor experiência
+      />
+      {/* Overlay escuro para legibilidade */}
+      <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center">
+        <motion.div
+          className="text-center px-4"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1, ease: "easeOut" }}
+        >
+          <h2 className="text-5xl md:text-6xl font-bold mb-4 bg-gradient-to-r from-red-600 to-white bg-clip-text text-transparent">
+            Fuel Head - Powered by Passion
+          </h2>
+          <p className="text-xl md:text-2xl mb-6 text-white font-light max-w-2xl mx-auto">
+            Mais do que uma marca, um movimento. Vestuário exclusivo para quem vive com gasolina no sangue.
+          </p>
+          <motion.a
+            href="#categorias"
+            className="inline-block bg-red-600 text-white px-8 py-4 rounded-full font-semibold text-lg hover:bg-red-700 transition-colors duration-300"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+          >
+            Explorar Coleções
+          </motion.a>
+        </motion.div>
+      </div>
     </section>
   );
-}
+};
+
+export default Hero;

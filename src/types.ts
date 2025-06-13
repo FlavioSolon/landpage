@@ -10,3 +10,8 @@ export interface ICategoryBullet {
   description: string;
   icon: React.ReactNode; 
 }
+
+export interface ILogos {
+  title: string;
+  imageSrc: string;
+}
