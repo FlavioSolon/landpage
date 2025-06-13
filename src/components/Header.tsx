@@ -34,11 +34,12 @@ export default function Header() {
         {/* Logo */}
         <div className="w-32 h-12">
           <Image
-            src="/images/logo_site" // Caminho corrigido (sem /public/)
+            src="/images/logo_site"
             alt="Fuel Head Logo"
-            width={128} // Ajuste conforme o tamanho real
-            height={48} // Ajuste conforme o tamanho real
+            width={128} // Use o tamanho real da imagem
+            height={48} // Use o tamanho real da imagem
             className="object-contain"
+            style={{ width: "auto", height: "auto" }} // Opcional, se CSS alterar
           />
         </div>
         {/* Navegação Desktop */}

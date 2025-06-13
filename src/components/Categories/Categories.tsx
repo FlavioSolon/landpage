@@ -1,5 +1,4 @@
 "use client";
-import { motion } from "framer-motion";
 import { categories } from "@/data/categories";
 import CategorySection from "../Categories/CategorySection";
 
