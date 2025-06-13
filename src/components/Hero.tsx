@@ -1,14 +1,18 @@
 "use client";
 import { motion } from "framer-motion";
 import Image from "next/image"; // Importando o componente Image
+import { fundo } from "@/data/hero"; // Importando os dados do hero
 
 const Hero: React.FC = () => {
+  // Pegando o primeiro item do array (assumindo que só há um por enquanto)
+  const heroData = fundo[0];
+
   return (
     <section className="relative w-full h-screen overflow-hidden">
       {/* Imagem como fundo usando <Image> */}
       <Image
-        src="/images/fundo.png" // Caminho corrigido (sem /public/)
-        alt="Fuel Head - Carro e Moto"
+        src={heroData.imageSrc} // Usando o imageSrc do array
+        alt={heroData.title}
         fill // Ocupa o contêiner pai
         className="object-cover"
         quality={100}

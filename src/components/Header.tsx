@@ -2,10 +2,12 @@
 import { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { logo } from "@/data/header";
 
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const headerData = logo[0];
 
   useEffect(() => {
     const handleScroll = () => {
@@ -34,8 +36,8 @@ export default function Header() {
         {/* Logo */}
         <div className="w-32 h-12">
           <Image
-            src="/images/logo_site"
-            alt="Fuel Head Logo"
+            src={headerData.imageSrc} // Usando o imageSrc do array
+            alt={headerData.title}
             width={128} // Use o tamanho real da imagem
             height={48} // Use o tamanho real da imagem
             className="object-contain"
